@@ -56,3 +56,10 @@ h1 {
   font-size: clamp(2rem, 5vw, 4rem);
   color: var(--accent-color);
 }
+
+@media (max-width: 768px) {
+  .hero,
+  .parallax {
+    background-attachment: scroll;
+  }
+}
