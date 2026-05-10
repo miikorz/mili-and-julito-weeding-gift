@@ -5,12 +5,27 @@
 
   const updateParallax = () => {
     const scrollY = window.scrollY;
-    parallaxSections.forEach((section, index) => {
-      const speed = index === 0 ? HERO_SPEED : SECTION_SPEED;
+    parallaxSections.forEach((section, sectionIndex) => {
+      const isFirstSection = sectionIndex === 0;
+      const speed = isFirstSection ? HERO_SPEED : SECTION_SPEED;
       section.style.backgroundPositionY = `${-(scrollY * speed)}px`;
     });
   };
 
-  window.addEventListener('scroll', updateParallax, { passive: true });
+  let isTicking = false;
+
+  const onScroll = () => {
+    if (isTicking) {
+      return;
+    }
+
+    isTicking = true;
+    window.requestAnimationFrame(() => {
+      updateParallax();
+      isTicking = false;
+    });
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
   updateParallax();
 })();
