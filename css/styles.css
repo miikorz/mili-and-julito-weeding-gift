@@ -263,8 +263,33 @@ h2 {
 }
 
 /* ============================================
-   PHOTO PLACEHOLDERS
+   PHOTO PLACEHOLDERS & FRAMES
    ============================================ */
+.photo-frame {
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--gold-dim);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-frame:hover {
+  border-color: var(--gold);
+  box-shadow: 0 4px 30px rgba(201, 161, 59, 0.2);
+}
+
+.photo-frame.large {
+  margin: 2.5rem 0;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .photo-placeholder {
   background: linear-gradient(135deg, #1a1815 0%, #252018 50%, #1a1815 100%);
   border: 1px dashed var(--gold-dim);
