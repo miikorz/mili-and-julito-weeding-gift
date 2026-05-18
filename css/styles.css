@@ -293,6 +293,14 @@ h2 {
   margin: 0 auto;
 }
 
+.photo-caption {
+  text-align: center;
+  color: var(--text-dim);
+  max-width: 720px;
+  margin: -0.25rem auto 2.25rem;
+  font-style: italic;
+}
+
 .photo-placeholder {
   background: linear-gradient(135deg, #1a1815 0%, #252018 50%, #1a1815 100%);
   border: 1px dashed var(--gold-dim);
